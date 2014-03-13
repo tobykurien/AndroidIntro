@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+
+	<title>Android Intro</title>
+	
+  <!-- Holo theme -->
+	<link rel="stylesheet" type="text/css" href="holo/holo-base-elements.css" />
+	<link rel="stylesheet" type="text/css" href="holo/holo-dark-elements.css" />
+	<link rel="stylesheet" type="text/css" href="holo/holo-base-widgets.css" />
+	<link rel="stylesheet" type="text/css" href="holo/holo-dark-widgets.css" />
+	
+	<!-- Required stylesheet -->
+	<link rel="stylesheet" href="core/deck.core.css">
+	
+	<!-- Extension CSS files go here. Remove or add as needed. -->
+	<link rel="stylesheet" href="extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="extensions/menu/deck.menu.css">
+	<link rel="stylesheet" href="extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" href="extensions/status/deck.status.css">
+	<link rel="stylesheet" href="extensions/hash/deck.hash.css">
+	<link rel="stylesheet" href="extensions/scale/deck.scale.css">
+
+	<!-- Style theme. More available in /themes/style/ or create your own. -->
+	<link rel="stylesheet" href="themes/style/neon.css">
+  <link rel="stylesheet" type="text/css" href="holo/roboto.css" />
+	
+	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
+	<link rel="stylesheet" href="themes/transition/fade.css">
+	
+	<!-- Required Modernizr file -->
+	<script src="modernizr.custom.js"></script>
+
+	<script type="text/javascript" src="holo/holo-touch.js"></script>
+</head>
+<body>
+		
+<header class="actionBar">
+  <span>&nbsp;</span><button style="float:right;">Android Intro</button>
+</header>
+
+<article class="deck-container">
+<!-- Begin slides. Just make elements with a class of slide. -->
+
+  <section class="slide">
+    <br clear="all"/>
+    <h1>
+      Android Intro<br/>
+      <span style="font-size: 40px">Beginner's introduction to Android</span>
+    </h1>
+  </section>
+
+  <section class="slide">
+    <h3>General Information about Android</h3>
+    <ul>
+      <li class="slide">Named after creator Andy Rubin, versions named after desserts</li>
+      <li class="slide">Android Open Source Project (AOSP), forks: CyanogenMod, Amazon Kindle Fire, Nokia X</li>
+      <li class="slide">Linux kernel, Apps written in Java 6</li>
+      <li class="slide">Supports HTML5 (e.g. Apache Cordova)</li>
+      <li class="slide">Tools are free, available on all platforms (PC/Mac/Linux)</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h3>General Information about Android</h3>
+    <ul>
+      <li class="slide">Google Play: $25 signup fee, no annual fee, 70% revenue split (ZA not supported)</li>
+      <li class="slide">ZA Options: Ads, Amazon/Samsung/Vodacom app stores, offshore account</li>
+      <li class="slide">Market share: 79% of smartphones shipped worldwide in 2013 (Strategy Analytics)</li>
+    </ul>
+  </section>
+  
+  <section class="slide">
+    <h3>Getting the tools</h3>
+    <ul>
+      <li><pre>http://developer.android.com</pre></li>
+      <li>Download the <u>ADT Bundle</u> (~450Mb). <u>Android Studio</u> for IntelliJ fans.</li>
+    </ul>
+    <img src="images/download_sdk.png" width="60%"/>
+  </section>
+  
+  <section class="slide">
+    <h3>Let's start!</h3>
+    <ul>
+      <li>File -> New -> Other -> Android -> Android Application Project</li>
+    </ul>
+    <img src="images/new_app_step1.png"/>
+  </section>
+
+  <section class="slide">
+    <h3>Run your app!</h3>
+    <ul>
+      <li>Create an emulator:</li>
+      <ul>
+        <li>Android 4.x, HVGA, Intel image (if avail)</li>
+	<li>Windows/Mac: Install Intel HAXM driver from Intel site</li>
+        <li><b>Genymotion.com</b> - fast emulator, uses VirtualBox and RAM/CPU</li>
+      </ul>
+      <li>Right-click project root -> Run As -> Android application</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h3>Run your app!</h3>
+    <ul>
+      <li>Use your device:</li>
+      <ul>
+        <li>Settings -> About -> Tap Build Number many times</li>
+	<li>Settings -> Developer Options -> Enable USB Debugging</li>
+	<li>Plug in your device via USB (Windows needs USB driver)</li>
+	<li>Device must be visible in Devices view</li>
+      </ul>
+      <li>Right-click project root -> Run As -> Android application</li>
+    </ul>
+  </section>
+  
+  <section class="slide">
+    <h3>Main components of an App</h3>
+    <ul>
+      <li><b>Activities</b> - various screens in your app (like web pages)</li>
+      <ul>
+        <li><b>Fragments</b> - like iframes, stand-alone UI components that run inside an Activity, can be dynamically added/removed</li>
+      </ul>
+      <li><b>Services</b> - long-running tasks in your app (e.g. downloading file)</li>
+      <li><b>Broadcast Receiver</b> - listens for broadcast intents (e.g. phone ringing, battery low)</li>
+    </ul>
+  </section>
+  
+  <section class="slide">
+    <h3>Android project folders</h3>
+    <ul>
+      <li><b>src</b> – All Java code</li>
+      <li><b>assets</b> – multimedia, data, etc bundled with app</li>
+      <li><b>res</b> – all user interface resources</li>
+      <ul>
+        <li><b>drawable</b> – graphics and drawable xml</li>
+        <li><b>layout</b> – all activity layouts</li>
+        <li><b>values</b> – strings, colours, styles, etc.</li>
+        <li><b>menu</b> - menu XML descriptors</li>
+      </ul>
+      <li><b>bin, gen</b> - generated output, ignore in version control
+      <li><b>AndroidManifest.xml</b> – app descriptor file</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h3>Android Manifest file</h3>
+    <ul>
+      <li>Declares application, activities, services, permissions, hardware required, etc</li>
+      <li>Used by Market to filter apps based on SDK and hardware features</li>
+      <li>Used by installer to create launcher icon</li>
+      <li>Intent filters tell Android what operations your app can handle (e.g. E-mail, dialer, websites)</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h3>Connecting the dots</h3>
+    <ul>
+      <li>How does Android know which class and layout to load?</li>
+      <li>On install, creates icons for Intent with action MAIN and category LAUNCHER</li>
+      <li>On launch, it calls <i>onCreate()</i> method of the specified class, followed by <i>onStart()</i> and then <i>onResume()</i></li>
+      <li>The rest is up to the class!</li>
+      <li>In <i>onCreate()</i> we use <i>setContentView()</i> to load the layout</li>
+      <li>The generated <b>R</b> class allows code to reference the resources in the res folder</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h3>Button and Toast</h3>
+    <ul>
+      <li>Delete the layout content and add a <b>LinearLayout</b> (vertical)</li>
+      <li>Add a <b>Button</b> to the layout</li>
+      <li>Add an <i>onClick</i> handler to the Activity</li>
+      <li>
+	In the onClick, display a Toast
+	<textarea name="code" class="java">
+	    public void onButtonClick(View v) {
+	       Toast.makeText(this, "Hello, Android!", Toast.LENGTH_LONG).show();
+	    }
+	</textarea>
+      </li>
+    </ul>
+  </section>
+  
+  <section class="slide">
+    <h3>Exceptions and LogCat</h3>
+    <ul>
+      <li>"Force Close" (FC) - uncaught Java Exception</li>
+      <li>"Application Not Responsing" (ANR) - UI thread hanging</li>
+      <li>Use the <i>android.util.Log</i> class to log output</li>
+      <li>Open the <i>LogCat</i> view to view the logs and filter them</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h3>Intents demo</h3>
+    <ul>
+      <li>
+	Open a URL:
+	<textarea name="code" class="java">
+	  Intent i = new Intent();
+	  i.setAction(Intent.ACTION_VIEW);
+	  i.setData(Uri.parse("http://developer.android.com"));
+	  startActivity(i);
+	</textarea>
+      </li>
+      <li>
+	To dial a number:
+	<textarea name="code" class="java">
+	  Intent i = new Intent();
+	  i.setAction(Intent.ACTION_DIAL);
+	  i.setData(Uri.parse("tel:1234567"));
+	  startActivity(i);
+	</textarea>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h3>Adding an Activity</h3>
+    <ul>
+      <li>Create new <i>Activity</i> sub-class</li>
+      <li>Declare the Activity in the <i>AndroidManifest.xml</i></li>
+      <li>
+	Open the activity:
+	<textarea name="code" class="java">
+	  Intent i = new Intent(this, NewActivity.class);
+	  i.putExtra("user_id", userId); // optional arguments
+	  startActivity(i);
+	</textarea>
+      </li>
+      <li>Note: you can also <i>startActivityForResult()</i></li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h3>Themes: Holo Light and Dark</h3>
+    <table width="100%">
+      <tr>
+	<td><img src="images/themes_holo_light.png" height="90%"/></td>
+	<td><img src="images/themes_holo_dark.png" height="90%"/></td>
+      </tr>
+    </table>
+  </section>  
+  
+  <section class="slide">
+    <h3>The all-important Action Bar</h3>
+    <img src="images/action_bar_basics.png" style="float:left"/>
+    <img src="images/action_bar_pattern_considerations.png"  style="float:left"/>
+  </section>
+
+  <section class="slide">
+    <h3>Dialog boxes</h3>
+    <ul>
+      <li><b>AlertDialog.Builder</b> lets you create common dialog boxes</li>
+      <li><b>Theme.Dialog</b> allows you to change an Activity into a Dialog</li>
+    </ul>
+    <img src="images/dialogs_main.png"/>
+  </section>
+
+  <section class="slide">
+    <h3>Layouts</h3>
+    <ul>
+      <li><b>LinearLayout</b> - stacks views horizontally or vertically</li>
+      <li><b>FrameLayout</b> - stacks views over each other</li>
+      <li><b>RelativeLayout</b> - allows relative positioning of views</li>
+      <li><b>TableLayout</b> - puts views into a table, e.g. forms</li>
+      <li>Views can be positioned using <i>margin, padding, visibility, gravity, layout weight</i></li>
+      <li>Note: Android uses <i>dips</i> (dp) - density-independent pixels</li>
+    </ul>
+  </section>
+  
+  <section class="slide">
+    <h3>Drawables</h3>
+    <ul>
+      <li><b>Shape</b> - rectangle, oval, line, ring with fill, stroke.</li>
+      <li><b>Selector</b> - higlights touched/selected/active/disabled elements</li>
+      <li><b>Bitmap</b> - image that can be tiled in many ways, e.g. pin-stripes</li>
+      <li><b>9-patch</b> - stretchable PNG</li>
+      <li>Drawables can be displayed using an <b>ImageView</b> or set as background for most layouts and widgets</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h3>Stuff you need to know</h3>
+    <ul>
+      <li>Handling <i>configuration changes</i> (e.g. rotation)</li>
+      <li><i>List Adapter</i> to populate a ListView/GridView/Gallery</li>
+      <li>Multi-threading with <i>AsyncTask</i> or <i>IntentService</i></li>
+      <li>Efficient networking - use the <i>Volley</i> library</li>
+      <li>Preferences and <i>PreferenceActivity</i> for displaying/saving settings</li>
+      <li>Adapting to different screen sizes and orientations with <i>Fragments</i>, <i>SlidingPane</i>, and <i>NavigationDrawer</i></li>
+    </ul>    
+  </section>
+    
+  <section class="slide">
+    <h3>References:</h3>
+    <ul>
+      <li>Read the design guidelines: <pre>http://developer.android.com/design</pre></li>
+      <li>Continue your training:<pre>http://developer.android.com/training</pre></li>
+      <li>Android stuff I use: <pre>http://bit.ly/1dLj2Sw</pre></li>
+      <li>Discover 3rd party stuff: <pre>http://androidviews.net/</pre></li>
+      <li>Keep up to date: <pre>http://androidweekly.net/</pre></li>
+    </ul>
+  </section>
+
+  <!-- End slides. -->
+</article>
+
+<!-- Begin extension snippets. Add or remove as needed. -->
+
+<!-- End extension snippets. -->
+<footer class="actionBar">
+  <span style="float:left" id="timer"></span>
+  <span style="float:right">http://tobykurien.com | @tobykurien</span>
+</footer>
+
+
+<!-- Required JS files. -->
+<script src="jquery-1.7.2.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="../core/deck.core.js"></script>
+<script src="../extensions/hash/deck.hash.js"></script>
+<script src="../extensions/menu/deck.menu.js"></script>
+<script src="../extensions/goto/deck.goto.js"></script>
+<script src="../extensions/status/deck.status.js"></script>
+<script src="../extensions/navigation/deck.navigation.js"></script>
+<script src="../extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  // automatically load and play and videos with "vid" attribute when entering a 
+  // slide, and unload the video when exiting the slide
+  $(document).bind('deck.change', function(event, from, to) {
+    var slide = $.deck('getSlide', from);
+    if (slide != null) {
+      var vids = slide[0].getElementsByTagName("video");
+      for (var i=0; i < vids.length; i++) {
+        var v = vids[i];
+        v.src = '';
+      }
+    }
+  
+    var slide = $.deck('getSlide', to);
+    if (slide != null) {
+      if (slide[0] != null && slide[0].attributes != null && slide[0].attributes['time'] != null) {
+        document.getElementById('timer').innerHTML = slide[0].attributes['time'].value;
+      } else {
+        document.getElementById('timer').innerHTML = "";
+      }
+
+      var vids = slide[0].getElementsByTagName("video");
+      for (var i=0; i < vids.length; i++) {
+        var v = vids[i];
+        if (v != null && v.attributes != null && v.attributes['vid'] != null) {
+          v.src = v.attributes['vid'].value;
+        }
+      }
+    }
+    location.href='#'+to;
+  });
+
+	$(function() {
+		$.deck('.slide');
+		try {
+		 var frag = location.href.substring(location.href.indexOf('#') + 1);
+		 $.deck('go', frag*1);
+		} catch (e) { alert(e); }
+	});
+</script>
+
+<style>
+#timer {
+  color: #555;
+}
+
+.deck-container h1 {
+  font-size: 60px;
+}
+
+.deck-container pre {
+  padding: 5px;
+  margin-bottom: 5px;
+  color: #af0;
+}
+
+.pics li, .pics-large li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+img.slide {
+  display: inline-block;
+}
+
+b {
+  color: #af0;
+}
+
+i {
+  color: #fff;
+}
+</style>
+
+<!-- Syntax highlighting -->
+<link type="text/css" rel="stylesheet" href="dp.SyntaxHighlighter/Styles/SyntaxHighlighter.css"></link>
+<script language="javascript" src="dp.SyntaxHighlighter/Scripts/shCore.js"></script>
+<script language="javascript" src="dp.SyntaxHighlighter/Scripts/shBrushJava.js"></script>
+<script language="javascript" src="dp.SyntaxHighlighter/Scripts/shBrushXml.js"></script>
+<script language="javascript">
+//dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+
+</body>
+</html>
